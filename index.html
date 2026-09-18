@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing Awareness Simulation</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .login-box {
+      width: 320px;
+      padding: 30px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,.15);
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    input, button {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px;
+      margin-top: 12px;
+      border-radius: 6px;
+    }
+
+    input {
+      border: 1px solid #ccc;
+    }
+
+    button {
+      border: 0;
+      background: #333;
+      color: white;
+      cursor: pointer;
+    }
+
+    #result {
+      display: none;
+      margin-top: 20px;
+      padding: 15px;
+      background: #fff3cd;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="login-box">
+    <h2>Security Training</h2>
+
+    <form id="loginForm">
+      <input
+        type="text"
+        placeholder="Username"
+        autocomplete="off"
+      >
+
+      <input
+        type="password"
+        placeholder="Password"
+        autocomplete="off"
+      >
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div id="result">
+      <strong>⚠️ Simulation detected</strong>
+      <p>
+        A login attempt was made, but this demonstration
+        does not collect, save, or transmit your credentials.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Deliberately do NOT read the username or password.
+      // Nothing is sent to a server.
+
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
